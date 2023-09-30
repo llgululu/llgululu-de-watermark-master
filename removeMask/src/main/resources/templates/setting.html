@@ -1,0 +1,126 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/layui/2.8.15/css/layui.css">
+    <title >ll万能去水印后台管理系统-账号设置</title>
+    <style>
+        body {
+            background-color: #f3f4f6
+        }
+    </style>
+</head>
+<body>
+<div style="padding: 16px;">
+    <blockquote class="layui-elem-quote layui-text">
+        管理员账号设置
+    </blockquote>
+    <form style="padding-top: 10px" class="layui-form" lay-filter="admin-val-filter">
+        <input type="hidden" name="adId"  value="1" class="layui-input">
+        <div class="layui-form-item">
+            <label class="layui-form-label">账号</label>
+            <div class="layui-input-inline layui-input-wrap">
+                <input type="text" name="adName" lay-verify="required"  lay-affix="clear" class="layui-input">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">密码</label>
+            <div class="layui-input-inline layui-input-wrap">
+                <input type="text" name="adPassword" lay-verify="required"  lay-affix="clear" class="layui-input">
+            </div>
+        </div>
+        <input type="hidden" name="adId"  value="1" class="layui-input">
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn" lay-submit lay-filter="admin-submit">立即提交</button>
+            </div>
+        </div>
+    </form>
+    <blockquote class="layui-elem-quote layui-text">
+        系统设置
+    </blockquote>
+    <form style="padding-top: 10px" class="layui-form" lay-filter="settings-val-filter">
+        <input type="hidden" name="seId" value="1" class="layui-input">
+        <div class="layui-form-item">
+            <label class="layui-form-label">开启广告</label>
+            <div class="layui-input-block">
+                <input type="checkbox" name="seIsOpenAd" lay-skin="switch" lay-filter="switchTest" title="ON|OFF">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <label class="layui-form-label">接口设置</label>
+            <div class="layui-input-block">
+                <input type="radio" name="seApi" value="0" title="本地接口" checked>
+                <input type="radio" name="seApi" value="1" title="第三方接口">
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">banner广告</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="seAdBannerId" placeholder="请输入banner广告id"   lay-affix="clear"  class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">插屏广告</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="seAdInterstitialId" placeholder="请输入插屏广告id"   lay-affix="clear"  class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">激励广告</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="seAdRewardedId"  placeholder="请输入激励广告id"  lay-affix="clear"  class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">视频广告</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="seAdVideoId" placeholder="请输入视频广告id"  lay-affix="clear"   class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">AppId</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="seAppId" placeholder="请输入小程序AppId"  lay-affix="clear" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">AppSecret</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="seAppSecret" placeholder="请输入AppSecret" lay-affix="clear" lay-verify="required" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-inline">
+                <label class="layui-form-label">用户次数</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="seUserDailyCount" placeholder="用户每日默认次数"   lay-affix="clear" lay-verify="required|number" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+            <div class="layui-inline">
+                <label class="layui-form-label">激励次数</label>
+                <div class="layui-input-inline">
+                    <input type="text" name="seWatchAdd" placeholder="观看激励视频可得次数"   lay-affix="clear" lay-verify="required|number" autocomplete="off" class="layui-input">
+                </div>
+            </div>
+        </div>
+        <div class="layui-form-item">
+            <div class="layui-input-block">
+                <button type="submit" class="layui-btn"  lay-affix="clear" lay-submit lay-filter="setting-submit">立即提交</button>
+            </div>
+        </div>
+    </form>
+    
+</div>
+
+<script src="https://cdn.staticfile.org/layui/2.8.15/layui.js"></script>
+<script src="/static/js/setting.js"></script>
+</body>
+</html>

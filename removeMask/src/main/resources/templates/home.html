@@ -1,0 +1,77 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小程序后台管理系统-主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/layui/2.8.15/css/layui.css">
+    <script src="https://cdn.staticfile.org/echarts/5.4.2/echarts.min.js"></script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+        .myChart1, .myChart2 {
+            width: 100%;
+            height: 350px;
+        }
+
+        .admin-big-font {
+            font-size: 36px;
+            color: #5f5f5f;
+            line-height: 36px;
+            padding: 5px 0 10px;
+            overflow: hidden;
+            text-overflow: ellipsis;
+            word-break: break-all;
+            white-space: nowrap;
+        }
+    </style>
+</head>
+<body>
+<div class="layui-fluid" style="padding: 15px;">
+    <div class="layui-row layui-col-space15">
+        <div class="layui-col-sm6 layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">今日用户数</div>
+                <div class="layui-card-body">
+                    <p id="dayUserCount" class="admin-big-font">12</p>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-sm6 layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">总用户数</div>
+                <div class="layui-card-body">
+                    <p id="totalUserCount" class="admin-big-font">100</p>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-sm6 layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">今日解析次数</div>
+                <div class="layui-card-body">
+                    <p id="dayUCount" class="admin-big-font">25</p>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-sm6 layui-col-md3">
+            <div class="layui-card">
+                <div class="layui-card-header">总解析次数</div>
+                <div class="layui-card-body">
+                    <p id="totalUCount" class="admin-big-font">100</p>
+                </div>
+            </div>
+        </div>
+        <div class="layui-col-sm6 layui-col-md6">
+            <div class="myChart myChart1"></div>
+        </div>
+        <div class="layui-col-sm6 layui-col-md6">
+            <div class="myChart myChart2"></div>
+        </div>
+    </div>
+</div>
+<script src="https://cdn.staticfile.org/layui/2.8.15/layui.js"></script>
+<script src="/static/js/home.js"></script>
+</body>
+</html>

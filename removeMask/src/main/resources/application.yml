@@ -1,0 +1,29 @@
+server:
+  port: 8004
+spring:
+  mvc:
+    static-path-pattern: /static/**
+  thymeleaf:
+    cache: false # 关闭缓存,默认开启
+  datasource:
+    url: jdbc:mysql://localhost:3306/removemask?serverTimezone=Asia/Shanghai
+    driver-class-name: com.mysql.cj.jdbc.Driver
+    #    服务器上
+    username: root
+    password: root
+  redis:
+    host: 127.0.0.1
+    port: 6379
+    password:
+    # 使用的数据库索引，默认是0
+    database: 1
+    # 连接超时时间
+    timeout: 180000
+mybatis-plus:
+  configuration:
+    # 是否开启自动驼峰命名规则（camel case）映射，即从经典数据库列名 A_COLUMN（下划线命名） 到经典 Java 属性名 aColumn（驼峰命名） 的类似映射
+    map-underscore-to-camel-case: true
+#    # 这个配置会将执行的sql打印出来，在开发或测试的时候可以用
+    log-impl: org.apache.ibatis.logging.stdout.StdOutImpl
+# 第三方去水印接口 可用https://api.23bt.cn
+apiURL: https://api.23bt.cn/api/ds/index?key=你的密钥&url=

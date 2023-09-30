@@ -1,0 +1,29 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/layui/2.8.15/css/layui.css">
+    <title >ll万能去水印后台管理系统-账户管理</title>
+    <style>
+        body {
+            background-color: #f3f4f6
+        }
+    </style>
+</head>
+<body>
+<div style="padding: 16px;">
+    <table class="layui-hide" id="test" lay-filter="test"></table>
+    <div>
+        注：此页面的账号管理对应数据库，其中【默认单日量】表示用户每日可用次数，即一天可用几次。修改【默认单日量】不会改变今日可用次数，只会改变每日初始次数（第二日生效）。
+    </div>
+</div>
+<script type="text/html" id="barRight">
+    <div class="layui-clear-space">
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">编辑</a>
+    </div>
+</script>
+<script src="https://cdn.staticfile.org/layui/2.8.15/layui.js"></script>
+<script src="/static/js/accountManagement.js"></script>
+</body>
+</html>

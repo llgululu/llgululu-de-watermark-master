@@ -1,0 +1,93 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小程序后台管理系统-登录</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/static/image/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/layui/2.8.15/css/layui.css">
+    <style>
+        body {
+            background-color: #f3f4f6
+        }
+
+        .container {
+            padding: 110px 0;
+        }
+
+        .login-container {
+            width: 375px;
+            margin: 0 auto;
+        }
+
+        .form-title {
+            padding: 20px;
+            text-align: center;
+        }
+
+        .form-body {
+            padding: 20px;
+        }
+
+        .form-title h2 {
+            margin-bottom: 10px;
+            font-weight: 300;
+            font-size: 30px;
+            color: #000;
+        }
+
+        /**小屏0px-768px*/
+        @media only screen and (min-width: 0px) and (max-width: 768px) {
+            .login-container {
+                width: 300px;
+            }
+
+            .container {
+                padding-top: 60px;
+            }
+
+            .form-title, .form-body {
+                padding: 10px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="container">
+    <div class="login-container">
+        <div class="form-title">
+            <h2>后台管理系统登录</h2>
+        </div>
+        <div class="form-body">
+            <form class="layui-form">
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            <i class="layui-icon layui-icon-username"></i>
+                        </div>
+                        <input type="text" id="adminName" value="" lay-verify="required" placeholder="用户名"
+                               lay-reqtext="请填写用户名" autocomplete="off" class="layui-input" lay-affix="clear">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <div class="layui-input-wrap">
+                        <div class="layui-input-prefix">
+                            <i class="layui-icon layui-icon-password"></i>
+                        </div>
+                        <input type="password" id="password" value="" lay-verify="required" placeholder="密   码"
+                               lay-reqtext="请填写密码" autocomplete="off" class="layui-input" lay-affix="eye">
+                    </div>
+                </div>
+                <div class="layui-form-item">
+                    <button class="layui-btn layui-btn-fluid" lay-submit lay-filter="admin-login">登录</button>
+                </div>
+            </form>
+        </div>
+
+    </div>
+
+</div>
+<script src="https://cdn.staticfile.org/layui/2.8.15/layui.js"></script>
+<script src="/static/js/login.js"></script>
+</body>
+</html>

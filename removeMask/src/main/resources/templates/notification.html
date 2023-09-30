@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <title>小程序后台管理系统-通知设置</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="stylesheet" href="https://cdn.staticfile.org/layui/2.8.15/css/layui.css">
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+    </style>
+</head>
+<body>
+<div style="padding: 16px;">
+    <table class="layui-hide" id="test" lay-filter="test"></table>
+</div>
+
+<script type="text/html" id="toolbar">
+    <div class="layui-btn-container">
+        <button class="layui-btn layui-btn-sm" lay-event="add">新增通告</button>
+    </div>
+</script>
+<script type="text/html" id="barRight">
+    <div class="layui-clear-space">
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="edit">编辑</a>
+        <a class="layui-btn layui-btn-primary layui-btn-xs" lay-event="delete">删除</a>
+    </div>
+</script>
+<script src="https://cdn.staticfile.org/layui/2.8.15/layui.js"></script>
+
+<script src="/static/js/notification.js"></script>
+</body>
+</html>

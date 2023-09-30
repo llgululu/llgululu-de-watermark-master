@@ -1,0 +1,82 @@
+{
+	"easycom": {
+		"^u-(.*)": "@/uni_modules/uview-ui/components/u-$1/u-$1.vue"
+	},
+	"pages": [ //pages数组中第一项表示应用启动页，参考：https://uniapp.dcloud.io/collocation/pages
+		{
+			"path": "pages/index/index",
+			"style": {
+				"navigationBarTitleText": "万能去水印"
+			}
+		},
+		{
+			"path": "pages/remove/remove",
+			"style": {
+				"navigationBarTitleText": "万能去水印"
+			}
+		},
+		{
+			"path": "pages/mine/mine",
+			"style": {
+				"navigationBarTitleText": "我的",
+				"navigationStyle": "custom"
+			}
+		},
+		{
+			"path": "pages/index/introduction",
+			"style": {
+				"navigationBarTitleText": "小程序介绍"
+			}
+		},
+		{
+			"path": "pages/remove/problem",
+			"style": {
+				"navigationBarTitleText": "教程和问题"
+			}
+		},
+		{
+			"path": "pages/remove/image",
+			"style": {
+				"navigationBarTitleText": "图集解析"
+			}
+		},
+		{
+			"path": "pages/remove/video",
+			"style": {
+				"navigationBarTitleText": "视频解析"
+			}
+		},
+		{
+			"path": "pages/index/announcemen",
+			"style": {
+				"navigationBarTitleText": "通告"
+			}
+		}
+	],
+	"globalStyle": {
+		"navigationBarTextStyle": "white",
+		"navigationBarTitleText": "万能去水印",
+		"navigationBarBackgroundColor": "#3c9cff",
+		"backgroundColor": "#F8F8F8"
+	},
+	// 原生的导航
+	"tabBar": {
+		"list": [{
+				"pagePath": "pages/index/index"
+			},
+			{
+				"pagePath": "pages/remove/remove"
+			},
+			{
+				"pagePath": "pages/mine/mine"
+			}
+		]
+	},
+	"plugins": {
+		"wxacommentplugin": {
+			"version": "latest",
+			"provider": "wx82e6ae1175f264fa"
+		}
+	},
+	"uniIdRouter": {}
+}

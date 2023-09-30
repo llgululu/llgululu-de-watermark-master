@@ -1,0 +1,99 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+    <meta charset="UTF-8">
+    <title th:text="${pageTitle}">ll万能去水印后台管理系统-主页</title>
+    <meta name="viewport" content="width=device-width, initial-scale=1">
+    <link rel="icon" href="/static/image/favicon.ico" type="image/x-icon"/>
+    <link rel="stylesheet" href="https://cdn.staticfile.org/layui/2.8.15/css/layui.css">
+    <script src="https://cdn.staticfile.org/echarts/5.4.2/echarts.min.js"></script>
+    <style>
+        body {
+            background-color: #f2f2f2;
+        }
+
+        #admin-left-nav, #admin-title, #admin-header-icon, #admin-container-body {
+            transition: all .3s;
+            -webkit-transition: all .3s;
+        }
+
+        #admin-container-body {
+            padding-bottom: 0;
+        }
+
+        /**小屏0px-768px*/
+        @media only screen and (min-width: 0px) and (max-width: 768px) {
+            #admin-left-nav, #admin-title {
+                transform: translate3d(-200px, 0, 0);
+                -webkit-transform: translate3d(-200px, 0, 0);
+            }
+
+            #admin-header-icon, #admin-container-body {
+                left: 0;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="layui-layout layui-layout-admin">
+    <div class="layui-header">
+        <div class="layui-logo  layui-bg-black" id="admin-title">ll小程序后台管理</div>
+        <ul class="layui-nav layui-layout-left" id="admin-header-icon">
+            <li style="margin: 0 10px" class="layui-nav-item layui-show-xs-inline-block layui-hide-sm"
+                lay-header-event="menuLeft">
+                <i class="layui-icon layui-icon-spread-left" id="show-nav-icon"></i>
+            </li>
+            <li style="margin: 0 10px" class="layui-nav-item ">
+                <i onclick="window.location.reload();" class="layui-icon layui-icon-refresh"></i>
+            </li>
+        </ul>
+    </div>
+    <div class="layui-side layui-bg-black" id="admin-left-nav">
+        <div class="layui-side-scroll">
+            <!-- 左侧导航区域（可配合layui已有的垂直导航） -->
+            <ul class="layui-nav layui-nav-tree" lay-filter="test">
+                <li class="layui-nav-item"
+                    th:class="${pageName == 'home'} ? 'layui-nav-item layui-this' : 'layui-nav-item' ">
+                    <a href="home.html" th:href="@{/sysadmin/admin/home}">主页</a>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:">用户管理</a>
+                    <dl class="layui-nav-child">
+                        <dd th:class="${pageName == 'accountManagement'} ? 'layui-this' : '' ">
+                            <a href="accountManagement.html" th:href="@{/sysadmin/admin/accountManagement}">账户管理</a>
+                        </dd>
+                        <dd th:class="${pageName == 'usageManagement'} ? 'layui-this' : '' ">
+                            <a href="usageManagement.html" th:href="@{/sysadmin/admin/usageManagement}">用量管理</a>
+                        </dd>
+                        <dd th:class="${pageName == 'parseRecords'} ? 'layui-this' : '' ">
+                            <a href="parseRecords.html" th:href="@{/sysadmin/admin/parseRecords}">解析记录</a>
+                        </dd>
+                        <dd th:class="${pageName == 'newDownload'} ? 'layui-this' : '' ">
+                            <a href="newDownload.html" th:href="@{/sysadmin/admin/newDownload}">新增域名</a>
+                        </dd>
+                    </dl>
+                </li>
+                <li class="layui-nav-item layui-nav-itemed">
+                    <a href="javascript:;">系统设置</a>
+                    <dl class="layui-nav-child">
+                        <dd th:class="${pageName == 'setting'} ? 'layui-this' : '' ">
+                            <a href="setting.html" th:href="@{/sysadmin/admin/setting}">参数设置</a>
+                        </dd>
+                        <dd th:class="${pageName == 'notification'} ? 'layui-this' : '' ">
+                            <a href="notification.html" th:href="@{/sysadmin/admin/notification}">通知设置</a>
+                        </dd>
+                    </dl>
+                </li>
+            </ul>
+        </div>
+    </div>
+    <div class="layui-body" id="admin-container-body">
+        <!-- 内容主体区域 -->
+        <iframe width="99%" id="kidFrame" style="min-height:680px" src="home.html"
+                th:src="@{'/sysadmin/page/'+${pageName}}"></iframe>
+    </div>
+</div>
+<script src="https://cdn.staticfile.org/layui/2.8.15/layui.js"></script>
+<script src="/static/js/index.js"></script>
+</body>
+</html>
